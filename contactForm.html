@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Apartment Sign up form</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="js/functions.js"></script>
+    <script src="js/formValidation.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive-grid.css">
+</head>
+
+<body>
+    <div class="container contactForm">
+        <div class="topnav" id="myTopnav">
+            <a href="index.html" class="active">Home</a>
+            <a href="#">Rental Locations</a>
+            <a href="#">Submit Application</a>
+            <a href="index.html">Contact</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="responsiveNav()">&#9776;</a>
+        </div>
+        <header>
+            <h1>Rental Application</h1>
+            <p>All occupants over the age of
+                <strong>18 MUST</strong> fill out a seperate application.</p>
+            <p>Please fill out the form
+                <strong>COMPLETELY</strong>
+            </p>
+        </header>
+
+        <section class="main">
+            <form method="post">
+                <fieldset>
+                    <legend>Personal Information: Primary Occupant</legend>
+                    <div class="row">
+                        <div class="col-m-3 col-3">
+                            <label for="fName">Name</label>
+                            <input type="text" name="fName" id="fName" placeholder="required" required>
+                            <span class="error" id="fNameError"></span>
+                        </div>
+                        <div class="col-m-3 col-3">
+                            <label for="mName">Middle</label>
+                            <input type="text" name="mName" id="mName">
+                            <span class="error" id="mNameError"></span>
+                        </div>
+                        <div class="col-m-3 col-3">
+                            <label for="lName">Last</label>
+                            <input type="text" name="lName" id="lName" placeholder="required" required>
+                            <span class="error" id="lNameError"></span>
+                        </div>
+                        <div class="col-m-3 col-3">
+                            <label for="SSN">SSN#</label>
+                            <input type="text" name="SSN" id="ssn" placeholder="required" required>
+                            <span class="error" id="ssnError"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-m-3 col-3">
+                            <label for="maritalStatus">Marital Status</label>
+                            <input type="text" name="maritalStatus" id="maritalStatus">
+                            <span class="error" id="maritalStatusError"></span>
+                        </div>
+                        <div class="col-m-3 col-3">
+                            <label for="DOB">Date of birth</label>
+                            <input type="text" name="DOB" id="DOB" placeholder="required" required>
+                            <span class="error" id="DOBError"></span>
+                        </div>
+                        <div class="col-m-3 col-3">
+                            <label for="driverLicense">Drive License #</label>
+                            <input type="text" name="driverLicense" id="driverLicense" placeholder="required" required>
+                            <span class="error" id="driverLicenseError"></span>
+                        </div>
+                        <div class="col-m-3 col-3">
+                            <label for="phone">Phone</label>
+                            <input type="text" name="phone" id="phone" placeholder="required" required>
+                            <span class="error" id="phoneError"></span>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-m-6 col-6">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email">
+                            <span class="error" id="emailError"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-m-4 col-4">
+                            <label for="currentAddress">Current Address</label>
+                            <input type="text" name="currentAddress" id="currentAddress" placeholder="required" required>
+                            <span class="error" id="currentAddressError"></span>
+                        </div>
+                        <div class="col-m-4 col-4">
+                            <label for="cityStateZip">City,State,Zip</label>
+                            <input type="text" name="cityStateZip" id="cityStateZip" placeholder="required" required>
+                            <span class="error" id="cityStateZipError"></span>
+                        </div>
+                        <div class="col-m-4 col-4">
+                            <label for="lengthOfTimeCurrentAddress">Length of time at current address</label>
+                            <input type="text" name="lengthOfTimeCurrentAddress" id="lengthOfTimeCurrentAddress" placeholder="required" required>
+                            <span class="error" id="lengthOfTimeCurrentAddressError"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-m-4 col-4">
+                            <label for="previousAddress">Previous Address</label>
+                            <input type="text" name="previousAddress" id="previousAddress">
+                            <span class="error" id="previousAddressError"></span>
+                        </div>
+                        <div class="col-m-4 col-4">
+                            <label for="previousCityStateZip">City,State,Zip</label>
+                            <input type="text" name="previousCityStateZip" id="previousCityStateZip">
+                            <span class="error" id="previousCityStateZipError"></span>
+                        </div>
+                        <div class="col-m-4 col-4">
+                            <label for="lengthOfTimePreviousAddress">Length of time at previous address</label>
+                            <input type="text" name="lengthOfTimePreviousAddress" id="lengthOfTimePreviousAddress">
+                            <span class="error" id="lengthOfTimePreviousAddress"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-m-12 col-12">
+                            <label for="reasonForLeaving">Reason for leaving</label>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-m-6 col-6">
+                                <span class="error" id="reasonForLeavingError"></span>
+                            <textarea name="reasonForLeaving" id="reasonForLeaving"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Additional Occupants</legend>
+                    <div class="row">
+                        <div class="col-m-3 col-3">
+                            <label for="additionalOccupant1">Name</label>
+                            <input type="text" name="additionalOccupant1">
+                        </div>
+                        <div class="col-m-3 col-3">
+                            <label for="additionalOccupantRelationship1">Relationship</label>
+                            <input type="text" name="additionalOccupantRelationship1">
+                        </div>
+                        <div class="col-m-3 col-3">
+                            <label for="additionalOccupantOccupation1">Occupation</label>
+                            <input type="text" name="additionalOccupantOccupation1">
+
+                        </div>
+                        <div class="col-m-2 col-2">
+                            <label for="additionalOccupantAge1">Age</label>
+                            <input type="text" name="additionalOccupantAge1">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-m-3 col-3">
+                            <label for="additionalOccupant2">Name</label>
+                            <input type="text" name="additionalOccupant2">
+                        </div>
+                        <div class="col-m-3 col-3">
+                            <label for="additionalOccupantRelationship2">Relationship</label>
+                            <input type="text" name="additionalOccupantRelationship2">
+                        </div>
+                        <div class="col-m-3 col-3">
+                            <label for="additionalOccupantOccupation2">Occupation</label>
+                            <input type="text" name="additionalOccupantOccupation2">
+                        </div>
+                        <div class="col-m-2 col-2">
+                            <label for="additionalOccupantAge2">Age</label>
+                            <input type="text" name="additionalOccupantAge2">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-m-3 col-3">
+                            <label for="additionalOccupant3">Name</label>
+                            <input type="text" name="additionalOccupant3">
+                        </div>
+                        <div class="col-m-3 col-3">
+                            <label for="additionalOccupantRelationship3">Relationship</label>
+                            <input type="text" name="additionalOccupantRelationship3">
+                        </div>
+                        <div class="col-m-3 col-3">
+                            <label for="additionalOccupantOccupation3">Occupation</label>
+                            <input type="text" name="additionalOccupantOccupation3">
+                        </div>
+                        <div class="col-m-2 col-2">
+                            <label for="additionalOccupantAge3">Age</label>
+                            <input type="text" name="additionalOccupantAge3">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-m-2 col-2">
+                            <button type="button" id="showMoreOccupants" class="ui-state-default ui-corner-all">Add More</button>
+                        </div>
+                    </div>
+                    <section class="show ui-corner-all" id="MoreOccupants">
+                        <div class="row">
+                            <div class="col-m-3 col-3">
+                                <label for="additionalOccupant1">Name</label>
+                                <input type="text" name="additionalOccupant1">
+                            </div>
+                            <div class="col-m-3 col-3">
+                                <label for="additionalOccupantRelationship1">Relationship</label>
+                                <input type="text" name="additionalOccupantRelationship1">
+                            </div>
+                            <div class="col-m-3 col-3">
+                                <label for="additionalOccupantOccupation1">Occupation</label>
+                                <input type="text" name="additionalOccupantOccupation1">
+
+                            </div>
+                            <div class="col-m-2 col-2">
+                                <label for="additionalOccupantAge1">Age</label>
+                                <input type="text" name="additionalOccupantAge1">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-m-3 col-3">
+                                <label for="additionalOccupant2">Name</label>
+                                <input type="text" name="additionalOccupant2">
+                            </div>
+                            <div class="col-m-3 col-3">
+                                <label for="additionalOccupantRelationship2">Relationship</label>
+                                <input type="text" name="additionalOccupantRelationship2">
+                            </div>
+                            <div class="col-m-3 col-3">
+                                <label for="additionalOccupantOccupation2">Occupation</label>
+                                <input type="text" name="additionalOccupantOccupation2">
+                            </div>
+                            <div class="col-m-2 col-2">
+                                <label for="additionalOccupantAge2">Age</label>
+                                <input type="text" name="additionalOccupantAge2">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-m-3 col-3">
+                                <label for="additionalOccupant3">Name</label>
+                                <input type="text" name="additionalOccupant3">
+                            </div>
+                            <div class="col-m-3 col-3">
+                                <label for="additionalOccupantRelationship3">Relationship</label>
+                                <input type="text" name="additionalOccupantRelationship3">
+                            </div>
+                            <div class="col-m-3 col-3">
+                                <label for="additionalOccupantOccupation3">Occupation</label>
+                                <input type="text" name="additionalOccupantOccupation3">
+                            </div>
+                            <div class="col-m-2 col-2">
+                                <label for="additionalOccupantAge3">Age</label>
+                                <input type="text" name="additionalOccupantAge3">
+                            </div>
+                        </div>
+
+                    </section>
+
+                </fieldset>
+                <fieldset>
+                    <legend>Additional Information</legend>
+                    <div class="row">
+                        <div class="col-m-12 col-12">
+                            <label>Vehicle(s)</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-m-2 col-2">
+                            <label for="vehicleYear">Year</label>
+                            <input type="text" name="vehicleYear">
+                        </div>
+                        <div class="col-m-2 col-2">
+                            <label for="vehicleMake">Make</label>
+                            <input type="text" name="vehicleMake" onkeyup="showHint(this.value)">
+                            <p>
+                                <span id="txtHint"></span>
+                            </p>
+                        </div>
+                        <div class="col-m-2 col-2">
+                            <label for="vehicleModel">Model</label>
+                            <input type="text" name="vehicleModel">
+
+                        </div>
+                        <div class="col-m-2 col-2">
+                            <label for="vehicleColor">Color</label>
+                            <input type="text" name="vehicleColor">
+                        </div>
+
+                        <div class="col-m-2 col-2">
+                            <label for="vehicleLicensePlate1">License Plate #</label>
+                            <input type="text" name="vehicleLicensePlate1">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-m-2 col-2">
+                            <label for="vehicleYear2">Year</label>
+                            <input type="text" name="vehicleYear2">
+                        </div>
+                        <div class="col-m-2 col-2">
+                            <label for="vehicleMake2">Make</label>
+                            <input type="text" name="vehicleMake2" onkeyup="showHint2(this.value)">
+                            <p>
+                                <span id="txtHint2"></span>
+                            </p>
+                        </div>
+                        <div class="col-m-2 col-2">
+                            <label for="vehicleModel2">Model</label>
+                            <input type="text" name="vehicleModel2">
+                        </div>
+                        <div class="col-m-2 col-2">
+                            <label for="vehicleColor2">Color</label>
+                            <input type="text" name="vehicleColor2">
+                        </div>
+                        <div class="col-m-2 col-2">
+                            <label for="vehicleLicensePlate1">LicensePlate #</label>
+                            <input type="text" name="vehicleLicensePlate1">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-m-12 col-12">
+                            <label>Proposed Pet(s) 2 Pet limit</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-m-2 col-2">
+                            <label for="petName1">Name</label>
+                            <input type="text" name="petName1">
+                        </div>
+                        <div class="col-m-2 col-2">
+                            <label for="petTypeBreed1">Type/Breed</label>
+                            <input type="text" name="petTypeBreed1">
+                        </div>
+                        <div class="col-m-2 col-2">
+                            <label for="petAge1">Age</label>
+                            <input type="text" name="petAge1">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-m-2 col-2">
+                            <label for="petName2">Name</label>
+                            <input type="text" name="petName2">
+
+                        </div>
+                        <div class="col-m-2 col-2">
+                            <label for="petTypeBreed2">Type/Breed</label>
+                            <input type="text" name="petTypeBreed2">
+                        </div>
+                        <div class="col-m-2 col-2">
+                            <label for="petAge2">Age</label>
+                            <input type="text" name="petAge2">
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Employment Information</legend>
+                    <div class="row">
+                        <div class="col-m-4 col-4">
+                            <label for="employer">Current Employer</label>
+                            <input type="text" name="employer" id="employer" placeholder="required" required>
+                            <span class="error" id="employerError"></span>
+
+                        </div>
+                        <div class="col-m-4 col-4">
+                            <label for="workOccupation">Occupation</label>
+                            <input type="text" name="workOccupation" id="workOccupation" placeholder="required" required>
+                            <span class="error" id="workOccupationError"></span>
+                        </div>
+                        <div class="col-m-4 col-4">
+                            <label for="salary">Salary/per hour</label>
+                            <input type="text" name="salary" id="salary" placeholder="required" required>
+                            <span class="error" id="salaryError"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-m-6 col-6">
+                            <label for="supervisor">Supervisor</label>
+                            <input type="text" name="supervisor" id="supervisor" placeholder="required" required>
+                            <span class="error" id="supervisorError"></span>
+                        </div>
+                        <div class="col-m-6 col-6">
+                            <label for="supervisorPhone">Phone</label>
+                            <input type="text" name="supervisorPhone" id="supervisorPhone" placeholder="required" required>
+                            <span class="error" id="supervisorPhoneError"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-m-6 col-6">
+                            <label for="supervisorAddress">Address</label>
+                            <input type="text" name="supervisorAddress">
+                        </div>
+                        <div class="col-m-6 col-6">
+                            <label for="supervisorCityStateZip">City,State,Zip</label>
+                            <input type="text" name="supervisorCityStateZip">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-m-6 col-6">
+                            <label for="supervisorEmployer">Supervisor employer</label>
+                            <input type="text" name="supervisorEmployer">
+                        </div>
+                        <div class="col-m-6 col-6">
+                            <label for="supervisorOccupation">Supervisor occupation</label>
+                            <input type="text" name="supervisorOccupation">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Apartment Preferences</legend>
+                    <div class="row">
+                            <p>If you have no preferences leave options blank</p>
+                        <div class="col-m-4 col-4">
+                                <h3>Floor preference:</h3>
+                                <label for="checkbox-nested-6">1st floor
+                                    <input type="checkbox" name="checkbox-nested-1" id="checkbox-nested-6">
+                                </label>
+                                <label for="checkbox-nested-7">2nd floor
+                                    <input type="checkbox" name="checkbox-nested-2" id="checkbox-nested-7">
+                                </label>
+                                <label for="checkbox-nested-8">3rd floor
+                                        <input type="checkbox" name="checkbox-nested-1" id="checkbox-nested-8">
+                                    </label>
+                                    <label for="checkbox-nested-9">Corner apartment
+                                        <input type="checkbox" name="checkbox-nested-2" id="checkbox-nested-9">
+                                    </label>
+                            </div>
+                        <div class="col-m-6 col-6">
+                            <h3>Room preferences:</h3>
+                            <label for="checkbox-nested-1">1 bed
+                                <input type="checkbox" name="checkbox-nested-1" id="checkbox-nested-1">
+                            </label>
+                            <label for="checkbox-nested-2">2 bed
+                                <input type="checkbox" name="checkbox-nested-2" id="checkbox-nested-2">
+                            </label>
+                            <label for="checkbox-nested-3">No smoking
+                                    <input type="checkbox" name="checkbox-nested-1" id="checkbox-nested-3">
+                                </label>
+                                <label for="checkbox-nested-4">washer/dryer in unit
+                                    <input type="checkbox" name="checkbox-nested-2" id="checkbox-nested-4">
+                                </label>
+                                <label for="checkbox-nested-5">washer/dryer hookup
+                                    <input type="checkbox" name="checkbox-nested-3" id="checkbox-nested-5">
+                                </label>
+                        </div>
+                       
+                    </div>
+                </fieldset>
+                <div class="row">
+                    <div class="col-m-1 col-2">
+                        <input type="submit" name="submit" id="submit" value="Submit">
+                    </div>
+                    <div class="col-m-1 col-2">
+                        <input type="reset" value="Reset">
+                    </div>
+                </div>
+            </form>
+        </section>
+        <section class="footer">
+            <footer>
+                <div class="row">
+                    <div class="col-m-6 col-6">
+                        <p>Lorem, ipsum dolor sit amet consectetur</p>
+                    </div>
+                    <div class="col-m-6 col-6">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+                    </div>
+                </div>
+            </footer>
+        </section>
+    </div>
+</body>
+
+</html>
